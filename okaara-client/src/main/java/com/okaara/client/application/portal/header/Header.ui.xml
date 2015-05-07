@@ -1,0 +1,87 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<g:HTMLPanel>
+		<header>
+			<div class="container">
+				<div class="row">
+
+					<!-- Logo section -->
+					<div class="col-md-6">
+						<!-- Logo. -->
+						<div class="logo">
+							<h1>
+								<a href="#">
+									Mac
+									<span class="bold">Admin</span>
+								</a>
+							</h1>
+							<p class="meta">something goes in meta area</p>
+						</div>
+						<!-- Logo ends -->
+					</div>
+
+					<!-- Button section -->
+
+
+					<!-- Data section -->
+
+					<div class="col-md-6">
+						<div class="header-data">
+
+							<!-- Traffic data -->
+							<div class="hdata">
+								<div class="mcol-left">
+									<!-- Icon with red background -->
+									<i class="fa fa-signal bred"></i>
+								</div>
+								<div class="mcol-right">
+									<!-- Number of visitors -->
+									<p>
+										<a href="#">7000</a>
+										<em>visits</em>
+									</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+
+							<!-- Members data -->
+							<div class="hdata">
+								<div class="mcol-left">
+									<!-- Icon with blue background -->
+									<i class="fa fa-user bblue"></i>
+								</div>
+								<div class="mcol-right">
+									<!-- Number of visitors -->
+									<p>
+										<a href="#">3000</a>
+										<em>users</em>
+									</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+
+							<!-- revenue data -->
+							<div class="hdata">
+								<div class="mcol-left">
+									<!-- Icon with green background -->
+									<i class="fa fa-money bgreen"></i>
+								</div>
+								<div class="mcol-right">
+									<!-- Number of visitors -->
+									<p>
+										<a href="#">5000</a>
+										<em>orders</em>
+									</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</header>
+	</g:HTMLPanel>
+</ui:UiBinder> 

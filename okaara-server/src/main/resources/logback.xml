@@ -1,0 +1,16 @@
+<configuration scan="true" scanPeriod="1 seconds">
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="org.eclipse.jetty.server.Server" level="info" />
+	<logger name="org.eclipse.jetty.server.AbstractConnector" level="info" />
+	<logger name="org.springframework.web" level="info" />
+	<logger name="org.springframework" level="error" />
+	<logger name="com.okaara" level="debug" />
+
+	<root level="info">
+		<appender-ref ref="stdout" />
+	</root>
+</configuration>

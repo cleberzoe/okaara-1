@@ -1,0 +1,65 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:org.gwtbootstrap3.client.ui">
+
+	<g:HTMLPanel styleName="animated fadeInDown">
+		<!-- Form area -->
+		<div class="admin-form">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Widget starts -->
+						<div class="widget worange">
+							<!-- Widget head -->
+							<div class="widget-head">
+								<i class="fa fa-lock"></i>
+								Login
+							</div>
+
+							<div class="widget-content">
+								<div class="padd">
+									<!-- Login form -->
+									<form class="form-horizontal">
+										<!-- Email -->
+										<div class="form-group">
+											<label class="control-label col-lg-3" for="inputEmail">Email</label>
+											<div class="col-lg-9">
+												<b:TextBox styleName="form-control" placeholder="Email" ui:field="email"/>
+											</div>
+										</div>
+										<!-- Password -->
+										<div class="form-group">
+											<label class="control-label col-lg-3" for="inputPassword">Password</label>
+											<div class="col-lg-9">
+												<b:Input type="PASSWORD" placeholder="Senha"
+													styleName="form-control" ui:field="password"></b:Input>
+											</div>
+										</div>
+										<!-- Remember me checkbox and sign in button -->
+										<div class="form-group">
+											<div class="col-lg-9 col-lg-offset-3">
+												<b:CheckBox text="Lembra-me"></b:CheckBox>
+											</div>
+										</div>
+										<div class="col-lg-9 col-lg-offset-3">
+											<b:Button type="INFO" ui:field="login">Entrar</b:Button>
+											<b:Button ui:field="clean">Limpar</b:Button>
+										</div>
+										<br />
+									</form>
+
+								</div>
+							</div>
+
+							<div class="widget-foot">
+								Not Registred?
+								<a href="#">Register here</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 
