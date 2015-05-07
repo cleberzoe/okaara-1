@@ -2,6 +2,7 @@ package com.okaara.framework.repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import com.okaara.framework.utils.MapUtil;
+
 @Component
 public class Dao {
 
@@ -21,13 +24,13 @@ public class Dao {
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;
 
-	private String getSql(String file, Model params) {
-		return SqlTemplateUtils.parseFile(getClass(), file, params);
+	private String getSql(String file) {
+		return SqlTemplateUtils.parseFile(getClass(), file);
 	}
 
 	protected <T> T findOne(String filename, Model params, RowMapper<T> mapper) {
 		try {
-			return jdbcTemplate.query(getSql(filename, params), params, new ResultSetExtractor<T>() {
+			return jdbcTemplate.query(getSql(filename), params, new ResultSetExtractor<T>() {
 				@Override
 				public T extractData(ResultSet rs) throws SQLException, DataAccessException {
 					if (rs.next()) {
@@ -45,10 +48,11 @@ public class Dao {
 		}
 	}
 
-	protected <T> void update(String filename, Model params) {
-		String sql = getSql(filename, params);
+	protected <T> void update(String filename, T params) {
+		String sql = getSql(filename);
 		LOGGER.debug("Update {} {}", sql, params);
-		jdbcTemplate.update(sql, params);
+		Map<String, Object> props = MapUtil.to(params);
+		jdbcTemplate.update(sql, props);
 	}
 
 }

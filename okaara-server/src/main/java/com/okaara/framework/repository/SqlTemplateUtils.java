@@ -36,7 +36,7 @@ public final class SqlTemplateUtils {
 	 *            - the {@link Map} with the data to fulfill the template file.
 	 * @return {@link String} with the expected SQL instruction.
 	 */
-	public static String parseFile(Class<?> baseClass, String file, Model params) {
+	public static String parseFile(Class<?> baseClass, String file) {
 		try {
 			Configuration cfg = configs.get(baseClass);
 
@@ -48,15 +48,11 @@ public final class SqlTemplateUtils {
 				configs.put(baseClass, cfg);
 			}
 			
-			if(params == null){
-				params = Model.create();
-			}
-
 			// TODO set the encoding by parameter
 			Template t = cfg.getTemplate(file, "UTF-8");
 
 			StringWriter writer = new StringWriter();
-			t.process(params, writer);
+			t.process(Model.create(), writer);
 			writer.flush();
 			writer.close();
 			return writer.toString();

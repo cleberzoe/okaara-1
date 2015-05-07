@@ -1,5 +1,6 @@
 SELECT idusuario, 
 	   nome, 
-	   senha
+	   senha,
+	   email
   FROM usuario
  WHERE idusuario = :id
