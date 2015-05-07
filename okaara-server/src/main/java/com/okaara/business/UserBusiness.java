@@ -1,10 +1,10 @@
 package com.okaara.business;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.okaara.repository.user.UserRepository;
+import com.okaara.shared.client.model.User;
 
 @Service
 public class UserBusiness {
@@ -12,11 +12,8 @@ public class UserBusiness {
 	@Autowired
 	private UserRepository repository;
 
-	public Map<String, Object> get(String id) {
-		Map<String, Object> map = new HashMap<>();
-		map.put("Achei ", id);
-		map.put("Qualquer coisa ", id + " dsad");
-		return map;
+	public User get(int id) {
+		return repository.get(id);
 	}
 
 }

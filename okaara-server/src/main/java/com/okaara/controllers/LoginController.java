@@ -1,7 +1,5 @@
 package com.okaara.controllers;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +22,8 @@ public class LoginController {
 	
 	@ResponseBody
 	@RequestMapping(value = "get/{id}", method = RequestMethod.GET)
-	public Map<String, Object> get(@PathVariable("id") String id) {
-		return userBs.get(id);
+	public User get(@PathVariable("id") String id) {
+		return userBs.get(Integer.parseInt(id));
 	}
 	
 	@ResponseBody

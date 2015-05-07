@@ -2,15 +2,22 @@ package com.okaara.shared.client.model;
 
 public class User {
 
+	private Integer id;
 	private String email;
 	private String password;
 
 	public User() {
 	}
 
-	public User(String email, String password) {
+	public User(Integer id, String email, String password) {
+		super();
+		this.id = id;
 		this.email = email;
 		this.password = password;
+	}
+
+	public User(String email, String password) {
+		this(null, email, password);
 	}
 
 	public String getEmail() {
@@ -27,6 +34,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 }

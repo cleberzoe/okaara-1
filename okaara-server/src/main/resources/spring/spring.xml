@@ -8,4 +8,5 @@
 
 	<import resource="spring-mvc.xml" />
 	<import resource="spring-di.xml" />
+	<import resource="spring-db.xml" />
 </beans>
